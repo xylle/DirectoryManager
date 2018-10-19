@@ -30,7 +30,8 @@ ADLDAP_ADMIN_USERNAME=
 ADLDAP_ADMIN_PASSWORD=
 ```
 6. Generate a laravel app key by running `php artisan key:generate`
-7. Complete!
+7. Migrate your databases `php artisan migrate`
+8. Complete!
 
 # Contributing
 
