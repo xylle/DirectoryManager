@@ -16,7 +16,7 @@ class GroupController extends Controller
 
     public function index() {
 
-        $groups = $this->ldap->search()->groups()->get();
+        $groups = $this->ldap->search()->groups()->sortBy('cn', 'asc')->get();
 
         return view('groups.index', ['groups' => $groups]);
 

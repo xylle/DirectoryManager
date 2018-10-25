@@ -36,6 +36,14 @@ Route::group(['middleware' => 'auth'], function() {
     Route::delete('/users/{id}/delete', 'UserController@destroy')->name('users.destroy');
 
     /*
+        Groups
+    */
+    Route::get('/groups', 'GroupController@index')->name('groups.index');
+    Route::get('/groups/create', 'GroupController@create')->name('users.create');
+    Route::get('/groups/{id}', 'GroupController@show')->name('users.show');
+    Route::get('/groups/{id}/edit', 'GroupController@edit')->name('users.edit');
+
+    /*
         Computers
     */
     
