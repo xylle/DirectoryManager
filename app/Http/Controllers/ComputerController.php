@@ -16,7 +16,7 @@ class ComputerController extends Controller
 
     public function index() {
 
-        $computers = $this->ldap->search()->computers()->get();
+        $computers = $this->ldap->search()->computers()->sortBy('cn', 'asc')->get();
 
         return view('computers.index', ['computers' => $computers]);
 
