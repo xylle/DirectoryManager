@@ -13,7 +13,7 @@
                         <thead>
                           <tr>
                             <th scope="col">GroupName</th>
-                            <th scope="col">Display Name</th>
+                            <th scope="col">Managed By</th>
                             <th scope="col">Description</th>
                           </tr>
                         </thead>
@@ -21,8 +21,8 @@
                             @foreach ($groups as $group)
                             <tr>
                                 <th><a href="#">{{ $group->getCommonName() }}</a></th>
-                                <td>{{ $group->getCommonName() }}</td>
-                                <td>{{ $group->getCommonName() }}</td>
+                                <td>{{ $group->getAttribute('managedby', 0) }}</td>
+                                <td>{{ $group->getDescription() }}</td>
                             </tr> 
                             @endforeach
                         </tbody>
