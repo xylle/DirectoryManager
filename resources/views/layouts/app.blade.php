@@ -10,14 +10,30 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ URL::asset('js/app.js') }}" defer></script>
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="{{ URL::asset('asset/bootstrap-4.1.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('asset/datatables-1.10.19/css/dataTables.bootstrap4.min.css') }}">
+
+    <!-- Font Awesome JS -->
+    <script defer src="{{ URL::asset('asset/fontawesome-free-5.1.0-web/js/solid.js') }}"></script>
+    <script defer src="{{ URL::asset('asset/fontawesome-free-5.1.0-web/js/fontawesome.js') }}"></script>
+    <!-- jQuery - Slim version (=without AJAX) -->
+    <script src="{{ URL::asset('asset/jquery-3.3.1/jquery-3.3.1.min.js') }}"></script>
+    <!-- Popper.JS -->
+    <script src="{{ URL::asset('asset/popper-1.14.3/popper.min.js') }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{{ URL::asset('asset/bootstrap-4.1.1/js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('asset/datatables-1.10.19/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ URL::asset('asset/datatables-1.10.19/js/dataTables.bootstrap4.min.js') }}"></script>
+    <!-- <script src="{{ URL::asset('asset/js-cookie-2.2.0/js.cookie.min.js') }}"></script> -->
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('css/nunito.css') }}" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
