@@ -16,7 +16,7 @@ class UserController extends Controller
 
     public function index() {
 
-        $users = $this->ldap->search()->users()->get();
+        $users = $this->ldap->search()->users()->sortBy('cn', 'asc')->get();
 
         return view('users.index', ['users' => $users]);
 
