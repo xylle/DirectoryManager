@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Adldap\AdldapInterface;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class GroupController extends Controller
 {
     
     public function __construct(AdldapInterface $ldap) {
@@ -16,9 +16,9 @@ class UserController extends Controller
 
     public function index() {
 
-        $users = $this->ldap->search()->users()->sortBy('cn', 'asc')->get();
+        $groups = $this->ldap->search()->groups()->sortBy('cn', 'asc')->get();
 
-        return view('users.index', ['users' => $users]);
+        return view('groups.index', ['groups' => $groups]);
 
     }
 
