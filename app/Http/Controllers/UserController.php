@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    
+
     public function __construct(AdldapInterface $ldap) {
 
         $this->ldap = $ldap;
@@ -34,9 +34,15 @@ class UserController extends Controller
 
     }
 
-    public function store() {
+    public function store(Request $request) {
 
-        //
+        //create $user
+        $user = $this->ldap->user()->create($request->all());
+
+        //store user to current group
+        $group = $this->ldap->group()->find($request->group_id)->addMember($user);
+
+        return view('users.show', ['user' => $user]);
 
     }
 
