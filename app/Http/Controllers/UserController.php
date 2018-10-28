@@ -22,9 +22,19 @@ class UserController extends Controller
 
     }
 
-    public function show() {
+    public function show($id) {
 
-        //
+        $user = $this->ldap->search()->users()->find($id);
+
+        if ($user) {
+            return view('users.show', ['user' => $user]);
+        } else {
+            // Lire une valeur depuis le fichier env.
+            // $value = env('ADLDAP_CONTROLLERS');
+            // Lire une valeur depuis un fichier config special.
+            $value = config('404.user');
+            return view('users.404', ['value' => $value]);
+        }
 
     }
 

@@ -58,6 +58,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('computers.index') }}"> Computers </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('computers.index') }}"> Explore </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
