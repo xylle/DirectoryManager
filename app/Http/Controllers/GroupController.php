@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class GroupController extends Controller
 {
-    
+
     public function __construct(AdldapInterface $ldap) {
 
         $this->ldap = $ldap;
@@ -34,9 +34,11 @@ class GroupController extends Controller
 
     }
 
-    public function store() {
+    public function store(Request $request) {
 
-        //
+        $group = $this->ldap->group()->create($request->all());
+
+        return view('groups.show', ['group' => $group]);
 
     }
 
