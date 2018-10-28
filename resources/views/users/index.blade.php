@@ -13,7 +13,7 @@
         <tbody>
             @foreach ($users as $user)
             <tr>
-                <th><a href="#">{{ $user->getAccountName() }}</a></th>
+                <th><a href="{{ route('users.show', ['id' => $user->getAccountName()] ) }}">{{ $user->getAccountName() }}</a></th>
                 <td>{{ $user->getCommonName() }}</td>
                 <td>{{ $user->getDescription() }}</td>
             </tr> 

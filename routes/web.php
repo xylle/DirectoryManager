@@ -39,9 +39,9 @@ Route::group(['middleware' => 'auth'], function() {
         Groups
     */
     Route::get('/groups', 'GroupController@index')->name('groups.index');
-    Route::get('/groups/create', 'GroupController@create')->name('users.create');
-    Route::get('/groups/{id}', 'GroupController@show')->name('users.show');
-    Route::get('/groups/{id}/edit', 'GroupController@edit')->name('users.edit');
+    Route::get('/groups/create', 'GroupController@create')->name('groups.create');
+    Route::get('/groups/{id}', 'GroupController@show')->name('groups.show');
+    Route::get('/groups/{id}/edit', 'GroupController@edit')->name('groups.edit');
 
     /*
         Computers
